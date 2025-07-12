@@ -1,4 +1,7 @@
-  
+ 基于JavaFX的打字训练游戏
+ Java项目作业作业。 
+ 关联NCHU 实训 软件工程 课程设计 课设
+ 可联系mortylee@foxmail.com
 ![](https://cdn.nlark.com/yuque/0/2025/png/56925099/1752337459225-d47a9661-8e1f-4bf8-a974-bec3352cca68.png)
 
   
