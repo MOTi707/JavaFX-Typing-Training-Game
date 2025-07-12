@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="600.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab.Controller.FunctionController">
+   <children>
+      <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <Text layoutX="284.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="功能选择">
+               <font>
+                  <Font name="KaiTi" size="58.0" />
+               </font>
+            </Text>
+            <Arc fill="DODGERBLUE" layoutX="276.0" layoutY="165.0" length="180.0" onMouseClicked="#normalGame" opacity="0.8" radiusX="40.0" radiusY="40.0" startAngle="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="80.0" layoutX="275.0" layoutY="125.0" onMouseClicked="#normalGame" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="250.0" />
+            <Arc fill="DODGERBLUE" layoutX="524.0" layoutY="165.0" length="180.0" onMouseClicked="#normalGame" opacity="0.8" radiusX="40.0" radiusY="40.0" startAngle="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+            <Text layoutX="294.0" layoutY="178.0" onMouseClicked="#normalGame" strokeType="OUTSIDE" strokeWidth="0.0" text="单词闯关模式">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+            <Arc fx:id="arc1" disable="true" fill="#c8c8c8" layoutX="275.0" layoutY="273.0" length="180.0" onMouseClicked="#customizedGame" opacity="0.8" radiusX="40.0" radiusY="40.0" startAngle="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+            <Rectangle fx:id="rec" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#c8c8c8" height="80.0" layoutX="274.0" layoutY="233.0" onMouseClicked="#customizedGame" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="250.0" />
+            <Arc fx:id="arc2" disable="true" fill="#c8c8c8" layoutX="523.0" layoutY="273.0" length="180.0" onMouseClicked="#customizedGame" opacity="0.8" radiusX="40.0" radiusY="40.0" startAngle="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+            <Text fx:id="textCustomized" disable="true" layoutX="311.0" layoutY="286.0" onMouseClicked="#customizedGame" strokeType="OUTSIDE" strokeWidth="0.0" text="自定义练习">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+            <Arc fill="DODGERBLUE" layoutX="275.0" layoutY="389.0" length="180.0" onMouseClicked="#inputClick" opacity="0.8" radiusX="40.0" radiusY="40.0" startAngle="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="80.0" layoutX="274.0" layoutY="349.0" onMouseClicked="#inputClick" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="250.0" />
+            <Arc fill="DODGERBLUE" layoutX="523.0" layoutY="389.0" length="180.0" onMouseClicked="#inputClick" opacity="0.8" radiusX="40.0" radiusY="40.0" startAngle="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+            <Text layoutX="276.0" layoutY="402.0" onMouseClicked="#inputClick" strokeType="OUTSIDE" strokeWidth="0.0" text="自定义文本导入">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+            <Text id="prompt" fx:id="prompt" layoutX="399.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="已成功加载自定义文本数据" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="fileName" layoutX="426.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="barrierPane" disable="true" layoutX="174.0" layoutY="92.0" maxHeight="417.0" maxWidth="453.0" prefHeight="417.0" prefWidth="453.0" visible="false">
+         <children>
+            <Button layoutX="25.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#b1" opacity="0.0" prefHeight="124.0" prefWidth="125.0" text="Button" />
+            <Button layoutX="164.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#b2" opacity="0.0" prefHeight="124.0" prefWidth="125.0" text="Button" />
+            <Button layoutX="302.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#b3" opacity="0.0" prefHeight="124.0" prefWidth="125.0" text="Button" />
+            <Button layoutX="371.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#cancel" opacity="0.0" prefHeight="58.0" prefWidth="60.0" text="取消" />
+         </children>
+         <effect>
+            <DropShadow height="120.0" radius="59.5" spread="0.31" width="120.0" />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="sloganPane" layoutY="465.0" opacity="0.76" prefHeight="135.0" prefWidth="800.0" style="-fx-background-color: #d3d7d4;">
+         <children>
+            <Text layoutX="28.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="英文打字练习软件">
+               <font>
+                  <Font name="KaiTi" size="37.0" />
+               </font>
+            </Text>
+            <Text layoutX="127.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Let's type from here ,">
+               <font>
+                  <Font name="Arial Bold Italic" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="242.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="faster ,  higher ,  stronger .">
+               <font>
+                  <Font name="Arial Bold Italic" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

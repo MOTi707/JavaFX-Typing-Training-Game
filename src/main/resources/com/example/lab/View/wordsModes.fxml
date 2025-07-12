@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" focusTraversable="true" maxHeight="600.0" maxWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab.Controller.wordsModeController">
+   <children>
+      <AnchorPane fx:id="pane" focusTraversable="true" layoutY="-1.0" maxHeight="600.0" maxWidth="800.0" onKeyPressed="#keyboardHit" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="804.0" style="-fx-background-size: 20px;">
+               <menus>
+                  <Menu mnemonicParsing="false" text="功能">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#restart" text="重新游戏" />
+                        <Menu mnemonicParsing="false" text="选择难度">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#level1" text="原始" />
+                              <MenuItem mnemonicParsing="false" onAction="#level2" text="简单" />
+                              <MenuItem mnemonicParsing="false" onAction="#level3" text="普通" />
+                              <MenuItem mnemonicParsing="false" onAction="#level4" text="困难" />
+                           </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" onAction="#changeTextVisibility" text="隐藏/显示 材料" />
+                        <MenuItem mnemonicParsing="false" onAction="#backToMenu" text="返回主菜单" />
+                        <MenuItem mnemonicParsing="false" onAction="#exitGame" text="关闭游戏" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="帮助">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#help" text="查看帮助" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <Label layoutX="30.0" layoutY="50.0" text="时间：">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="104.0" text="总进度：">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="154.0" text="正确率：">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="204.0" text="平均速度：">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="300.0" text="当前输入：">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <Label fx:id="userTextLabel" layoutX="163.0" layoutY="299.0" prefHeight="38.0" prefWidth="534.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="progressBar" layoutX="212.0" layoutY="565.0" prefHeight="18.0" prefWidth="473.0" progress="0.16" />
+            <Button fx:id="junkButton" layoutX="89.0" layoutY="118.0" mnemonicParsing="false" onAction="#nextWord" prefHeight="0.0" prefWidth="0.0">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Button>
+            <Label fx:id="timeLabel" layoutX="102.0" layoutY="50.0" prefHeight="32.0" prefWidth="110.0" text="0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="processLabel" layoutX="119.0" layoutY="104.0" prefHeight="32.0" prefWidth="140.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="correctRatetLabel" layoutX="119.0" layoutY="154.0" prefHeight="32.0" prefWidth="140.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="speedLabel" layoutX="139.0" layoutY="204.0" prefHeight="32.0" prefWidth="172.0" text="0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="wordToTypeLabel" alignment="TOP_LEFT" layoutX="319.0" layoutY="55.0" prefHeight="454.0" prefWidth="426.0" wrapText="true">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="timeBar" layoutX="622.0" layoutY="258.0" maxHeight="15.0" maxWidth="300.0" prefHeight="15.0" prefWidth="300.0" progress="0.0" rotate="90.0" AnchorPane.rightAnchor="-118.0" />
+            <Label layoutX="118.0" layoutY="563.0" text="单词进度">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="756.0" layoutY="82.0" text="时间">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="endPane" layoutX="150.0" layoutY="99.0" prefHeight="400.0" prefWidth="552.0" style="-fx-background-color: rgba(165, 181, 163, 0.8);" visible="false">
+         <children>
+            <Label layoutX="18.0" layoutY="26.0" prefHeight="168.0" prefWidth="517.0" text="    很遗憾，你未能在时间内完成任务。" textFill="#eb3333" wrapText="true">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Label>
+            <Button layoutX="160.0" layoutY="270.0" mnemonicParsing="false" onMouseClicked="#restart" prefHeight="60.0" prefWidth="214.0" style="-fx-background-color: rgb(151, 197, 184);" text="重新开始" textFill="#f391a9">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow height="120.0" radius="59.5" spread="0.22" width="120.0" />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="pausePane" disable="true" layoutX="176.0" layoutY="139.0" prefHeight="321.0" prefWidth="453.0" visible="false">
+         <children>
+            <Label fx:id="pauseLabel" disable="true" prefHeight="267.0" prefWidth="453.0" text="已暂停 操作已停止" textAlignment="JUSTIFY" textFill="#ff623f" visible="false" wrapText="true">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
